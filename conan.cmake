@@ -112,7 +112,7 @@ function(conan_cmake_settings result)
             #check if the cmake system is a conan supported one
             set(_CONAN_SETTING_OS ${CONAN_SYSTEM_NAME})
         else()
-            message(FATAL_ERROR "cmake system ${CONAN_SYSTEM_NAME} is not supported by conan. Use one of ${CONAN_SUPPORTED_PLATFORMS}")
+            message(WARNING "cmake system ${CONAN_SYSTEM_NAME} is not supported by conan. Use one of ${CONAN_SUPPORTED_PLATFORMS}")
         endif()
     endif()
 
@@ -207,7 +207,7 @@ function(conan_cmake_settings result)
             set(_CONAN_SETTING_COMPILER_TOOLSET ${CMAKE_VS_PLATFORM_TOOLSET})
         endif()
     else()
-        message(FATAL_ERROR "Conan: compiler setup not recognized")
+        message(WARNING "Conan: compiler setup not recognized")
     endif()
 
     # If profile is defined it is used
