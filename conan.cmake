@@ -35,6 +35,10 @@
 
 # version: 0.18.1
 
+# Further version notes:
+# Modified version from: https://github.com/simfinite/cmake-conan
+# Forked from: https://github.com/conan-io/cmake-conan
+
 include(CMakeParseArguments)
 
 function(_get_msvc_ide_version result)
