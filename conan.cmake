@@ -422,13 +422,14 @@ function(conan_cmake_install)
       else()
           set(CONANFILE ${CMAKE_CURRENT_SOURCE_DIR}/${ARGUMENTS_CONANFILE})
       endif()
-      # A conan file has been specified - apply specified options as well if provided
-      foreach(ARG ${ARGUMENTS_OPTIONS})
-          set(CONAN_OPTIONS ${CONAN_OPTIONS} -o=${ARG})
-      endforeach()
     else()
       set(CONANFILE ".")
     endif()
+    # Apply specified options as well if provided
+    foreach(ARG ${ARGUMENTS_OPTIONS})
+        set(CONAN_OPTIONS ${CONAN_OPTIONS} -o=${ARG})
+    endforeach()
+
     if(ARGUMENTS_UPDATE)
       set(CONAN_INSTALL_UPDATE --update)
     endif()
