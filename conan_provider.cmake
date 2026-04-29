@@ -510,6 +510,9 @@ function(conan_install)
     # success
     set_property(GLOBAL PROPERTY CONAN_INSTALL_SUCCESS TRUE)
 
+    # Log JSON graph to file (variable conan_stdout)
+    file(WRITE "${CMAKE_BINARY_DIR}/conan_install_graph.json" "${conan_stdout}")
+
 endfunction()
 
 
